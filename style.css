@@ -21,7 +21,6 @@ header img{
   display: inline-block;
 }
 .container{
-  width: 1170px;
   display: flex;
   margin: 20px 50px;
   justify-content: center;
@@ -31,6 +30,7 @@ input{
   border-radius: 10px 0 0 10px;
   border-style: none;
   height: 30px;
+  padding-left: 10px;
 }
 button{
   height: 30px;
