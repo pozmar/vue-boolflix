@@ -5,7 +5,7 @@ const myApp = new Vue ({
   data: {
     movies: [],
     querySelect: "",
-    api_key: "fd80e6d24b1bc63e99d958a4dec41cf2"
+    api_key: "fd80e6d24b1bc63e99d958a4dec41cf2",
   },
   methods: {
     searching: function(){
@@ -18,6 +18,10 @@ const myApp = new Vue ({
     ).then(r =>
       {this.movies = r.data.results;
       })
+    },
+    voting: function(n){
+      return Math.round(n / 2);
     }
-  }
+  },
+
 })

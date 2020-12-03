@@ -54,3 +54,15 @@ button{
   color: grey;
   margin-bottom: 20px;
 }
+.box li{
+  display: inline-block;
+}
+.fa-star:before{
+  color: white;
+}
+.none{
+  display: none;
+}
+.active{
+  display: block;
+}
