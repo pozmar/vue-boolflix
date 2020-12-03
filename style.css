@@ -66,3 +66,7 @@ button{
 .active{
   display: block;
 }
+.box h5 img {
+  width: 30px;
+  height: 30px;
+}
