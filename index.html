@@ -19,21 +19,23 @@
     <header>
       <img src="img/logo.jpg" alt="">
       <div class="input-area">
-      <input type="text" name="" value="" v-model="querySelect" v-on:keydown.enter="searching()"><button type="button" name="button" @click="searching()">Cerca</button>
+        <input type="text" name="" value="" v-model="querySelect" v-on:keydown.enter="searching()"><button type="button" name="button" @click="searching()">Cerca</button>
       </div>
     </header>
     <main>
       <div class="container">
         <div class="box" v-for="movie in movies">
-          <!-- <img :src="'https://image.tmdb.org/t/p/w200' + movie.poster_path" alt=""> -->
-          <h2>{{ movie.title }}</h2>
-          <h4>{{ movie.original_title }}</h4>
-          <h5><img :src="movie.original_language.toUpperCase() in flags ?'img/' + movie.original_language + '.png' : 'img/logo.jpg'" alt="">
-          </h5>
-          <ul>
-            <li><i v-for="vote in voting(movie.vote_average)" class="fas fa-star"></i><i v-for="vote in (5 - voting(movie.vote_average))" class="far fa-star"></i></li>
-        </ul>
-      </div>
+          <img class="poster ":src="'https://image.tmdb.org/t/p/w200' + movie.poster_path" alt="">
+          <div class="description">
+            <h2>{{ movie.title }}</h2>
+            <h4>{{ movie.original_title }}</h4>
+            <h5><img :src="movie.original_language.toUpperCase() in flags ?'img/' + movie.original_language + '.png' : 'img/logo.jpg'" alt="">
+            </h5>
+            <ul>
+              <li><i v-for="vote in voting(movie.vote_average)" class="fas fa-star"></i><i v-for="vote in (5 - voting(movie.vote_average))" class="far fa-star"></i></li>
+            </ul>
+          </div>
+        </div>
 
       </div>
     </main>

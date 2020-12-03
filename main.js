@@ -32,7 +32,17 @@ const myApp = new Vue ({
       }
     ).then(r =>
       {this.movies = r.data.results;
-      })
+      }),
+      axios.get("https://api.themoviedb.org/3/search/tv",{
+        params: {
+          'api_key' : this.api_key,
+          query: this.querySelect,
+        }
+      }
+    ).then(result =>
+    {this.movies = [...result.data.results];
+
+    })
     },
     voting: function(n){
       return Math.round(n / 2);
