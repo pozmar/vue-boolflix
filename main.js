@@ -40,13 +40,16 @@ const myApp = new Vue ({
         }
       }
     ).then(result =>
-    {this.movies = [...result.data.results];
-
+    {this.movies = [... result.data.results].map(e => {
+      return {...e, title: e.name, original_title: e.original_name}});
     })
     },
     voting: function(n){
       return Math.round(n / 2);
     },
-  },
+  imgError: function(e){
+      e.target.src = 'img/logo.jpg'
 
+  }
+}
 })

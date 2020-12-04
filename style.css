@@ -40,20 +40,23 @@ button{
   border-radius: 0 10px 10px 0;
 }
 .box{
-  height: 300px;
-  width: 200px;
+  height: 500px;
+  width: 342px;
   margin: 10px 10px;
   text-align: center;
   position: relative;
 
 }
-.box h2{
-  color: white;
-  margin-bottom: 10px;
+.box p{
+  font-size: 15px;
 }
-.box h4, .box h5{
+.box h4, .box p{
   color: grey;
   margin-bottom: 20px;
+}
+.box .description img{
+  width: 30px;
+  height: 30px;
 }
 .box li{
   display: inline-block;
@@ -67,9 +70,9 @@ button{
 .active{
   display: block;
 }
-.box h5 img {
-  width: 30px;
-  height: 30px;
+.box .poster {
+  width: 342px;
+  height: 500px;
 }
 .description{
   position: absolute;
@@ -77,6 +80,7 @@ button{
   left: 50%;
   transform: translate(-50%, -50%);
   opacity: 0;
+  max-height: 340px;
 }
 .box:hover .description{
   opacity: 1;

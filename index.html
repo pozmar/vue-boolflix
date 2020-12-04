@@ -3,7 +3,6 @@
 <head>
   <!-- viewport -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <!-- font awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
   <!-- css -->
@@ -19,30 +18,48 @@
     <header>
       <img src="img/logo.jpg" alt="">
       <div class="input-area">
-        <input type="text" name="" value="" v-model="querySelect" v-on:keydown.enter="searching()"><button type="button" name="button" @click="searching()">Cerca</button>
+        <input
+        type="text"
+        name=""
+        value=""
+        v-model="querySelect"
+        v-on:keydown.enter="searching()">
+        <button
+        type="button" name="button" @click="searching()">Cerca</button>
       </div>
     </header>
     <main>
       <div class="container">
-        <div class="box" v-for="movie in movies">
-          <img class="poster ":src="'https://image.tmdb.org/t/p/w200' + movie.poster_path" alt="">
-          <div class="description">
-            <h2>{{ movie.title }}</h2>
-            <h4>{{ movie.original_title }}</h4>
-            <h5><img :src="movie.original_language.toUpperCase() in flags ?'img/' + movie.original_language + '.png' : 'img/logo.jpg'" alt="">
-            </h5>
-            <ul>
-              <li><i v-for="vote in voting(movie.vote_average)" class="fas fa-star"></i><i v-for="vote in (5 - voting(movie.vote_average))" class="far fa-star"></i></li>
+        <div
+        class="box"
+        v-for="movie in movies">
+        <img
+        class="poster"
+        v-on:error="imgError" :src="'https://image.tmdb.org/t/p/w342' + movie.poster_path" alt="">
+        <div class="description">
+          <h4>
+            Titolo: {{ movie.title }}
+          </h4>
+          <p>
+            Titolo originale: {{ movie.original_title }}
+          </p>
+          <p>
+            Overview: {{ movie.overview }}
+          </p>
+          <img :src="movie.original_language.toUpperCase() in flags ?'img/' + movie.original_language + '.png' : 'img/logo.jpg'" alt="">
+          <br><br>
+          <ul>
+            <li><i
+              v-for="vote in voting(movie.vote_average)"
+              class="fas fa-star"></i><i
+              v-for="vote in (5 - voting(movie.vote_average))"
+              class="far fa-star"></i></li>
             </ul>
           </div>
         </div>
-
       </div>
     </main>
-
-
   </div>
-
   <!-- main script -->
   <script src="main.js" charset="utf-8"></script>
 </body>
