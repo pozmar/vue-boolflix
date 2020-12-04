@@ -80,7 +80,8 @@ button{
   left: 50%;
   transform: translate(-50%, -50%);
   opacity: 0;
-  max-height: 340px;
+  width: 320px;
+  height: 480px;
 }
 .box:hover .description{
   opacity: 1;
